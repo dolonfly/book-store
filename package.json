@@ -1,6 +1,6 @@
 {
   "name": "book-store",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
@@ -12,6 +12,16 @@
     "ejs": "~2.3.3",
     "express": "~4.13.1",
     "morgan": "~1.6.1",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "cheerio": "0.12.3",
+    "request": "~2.58.0",
+    "iconv-lite": "~0.4.10",
+    "mongoose": "^3.8.24",
+    "lodash": "^3.5.0",
+    "perrier": "^0.3.3",
+    "winston": "^0.9.0",
+    "fs-extra": "^0.18.0",
+    "async": "^0.9.0",
+    "cron": "1.0.1"
   }
 }
