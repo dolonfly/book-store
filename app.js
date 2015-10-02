@@ -57,5 +57,6 @@ app.use(function (err, req, res, next) {
     });
 });
 
+require("./app/models/mongo").init(config.db);
 
 module.exports = app;
