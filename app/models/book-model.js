@@ -7,7 +7,6 @@ var connection = require('./mongo').defaultConnection();
 var BookSchema = new Schema({
     title: String,//图书名称
     originTitle: String,//对应豆瓣上的 origin_title=原作名
-    url: String,
     subTitle: String,//子标题
     isbn10: String,//isbn
     isbn13: String,//isbn
