@@ -15,7 +15,7 @@ var BookSchema = new Schema({
     authorIntro: String,//作者简介
     publishTime: String,//出版时间
     publisher: String,//出版社
-    page: Number,//页码
+    pages: Number,//页码
     price: String,//定价
     binding: String,//装帧
     series: {},//丛书

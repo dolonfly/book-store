@@ -43,7 +43,7 @@ function generateBook(isbn, callback) {
                 authorIntro: json5.author_intro,//作者简介
                 publishTime: json5.pubdate,//出版时间
                 publisher: json5.publisher,//出版社
-                page: json5.pages,//页码
+                pages: json5.pages,//页码
                 price: json5.price,//定价
                 binding: json5.binding,//装帧
                 series: json5.series,//丛书
