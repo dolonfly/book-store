@@ -1,4 +1,5 @@
 {
+  "port": 3000,
   "global": {
     "DB_NAME": "book-store-dev",
     "cronTime": "* * 2 * *"
