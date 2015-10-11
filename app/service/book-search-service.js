@@ -8,3 +8,7 @@ function findByIsbn(isbns, callback) {
     var isbnArray = isbns.split(",");
     Book.find({isbn13: {$in: isbnArray}}).exec(callback);
 }
+
+module.exports = {
+    findByIsbn: findByIsbn
+}

@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var isbnBookSearch = require("../api/isbn-book");
 
-//this place add routes
+router.get("/isbn/search", isbnBookSearch.search);
 
 module.exports = router;
