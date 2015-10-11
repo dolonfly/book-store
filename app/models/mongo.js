@@ -1,7 +1,7 @@
 "use strict";
 
 var mongoose = require('mongoose');
-var dbConfig = require('../book-library-config').db;
+var dbConfig = require('../dll-config').db;
 
 var DEFAULT_CONNECTION = mongoose.createConnection(dbConfig.uri, dbConfig.options);
 
