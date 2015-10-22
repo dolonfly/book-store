@@ -19,7 +19,14 @@ function search(req, res, next) {
                 msg: "search book by isbn err"
             });
         } else {
-            res.json(data);
+            if (data) {
+                res.json(data);
+            } else {
+                res.status(404).send({
+                    message:'the book not found'
+                });
+                return;
+            }
         }
     });
 }
