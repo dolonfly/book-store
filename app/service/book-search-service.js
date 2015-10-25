@@ -9,7 +9,7 @@ function findByIsbn(isbn, callback) {
     if (isbn.length == 10) {
         isbn = isbnSuite.convert.isbn10to13(isbn);
     }
-    Book.findOne({isbn13: isbn}).exec(callback);
+    Book.findOne({isbn13: isbn}, {source: 0}).exec(callback);
 }
 
 module.exports = {
