@@ -28,6 +28,7 @@ var BookSchema = new Schema({
     ebookPrice: String,//ebook的价格
     ebookUrl: String,//ebook 的url
     category: String,
+    source: String//图书来源网站：douban、dangdang...
 }, {
     collection: 'books'
 });
