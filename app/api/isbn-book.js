@@ -20,10 +20,10 @@ function search(req, res, next) {
             });
         } else {
             if (data) {
-                res.json(data);
+                res.json({code: 0, data: data});
             } else {
                 res.status(404).send({
-                    message:'the book not found'
+                    message: 'the book not found'
                 });
                 return;
             }
