@@ -4,10 +4,10 @@
 
 "use strict"
 
-var Book = require("../models/book-model");
 var request = require("request");
 var iconv = require('iconv-lite');
 var JSON5 = require('json5');
+var app_config = require('../utils/app-config');
 
 /**
  * 根据图书的isbn号码获取图书信息
@@ -15,8 +15,14 @@ var JSON5 = require('json5');
  * @param callback
  */
 function generateBook(isbn, callback) {
+    var api_key = app_config.getApiKey('douban');
+    var api_param = "";
+    if (api_key) {
+        api_param = "?apikey=" + api_key;
+    }
+    console.log('https://api.douban.com/v2/book/isbn/' + isbn + api_param);
     var options = {
-        url: 'https://api.douban.com/v2/book/isbn/' + isbn,
+        url: 'https://api.douban.com/v2/book/isbn/' + isbn + api_param,
         encoding: null,
         headers: {
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.152 Safari/537.36',
@@ -24,7 +30,7 @@ function generateBook(isbn, callback) {
         }
     };
     request(options, function (err, res) {
-            if (err) return callack;
+            if (err) return callack(err);
 
             var html = iconv.decode(res.body, "utf-8");
 
@@ -63,16 +69,11 @@ function generateBook(isbn, callback) {
     );
 }
 
-function fetchAndSave(isbn, callback) {
-    generateBook(isbn, function (err, res) {
-        if (!err) {
-            Book.create(res, callback);
-        } else {
-            callback(err);
-        }
-    });
-}
 
 module.exports = {
     generateBook: generateBook
 }
+
+generateBook("123", function (err, res) {
+    console.log(err)
+});
