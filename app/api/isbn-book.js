@@ -8,6 +8,7 @@ function search(req, res, next) {
     var isbn = req.query.isbn;
     if (!isbn) {
         res.status(400).send({
+            code: 400,
             message: "isbn is required."
         });
         return;
@@ -20,7 +21,7 @@ function search(req, res, next) {
             });
         } else {
             if (data) {
-                res.json({code: 0, data: data});
+                res.json({code: 200, data: data});
             } else {
                 res.status(404).send({
                     message: 'the book not found'
