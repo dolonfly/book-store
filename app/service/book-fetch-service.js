@@ -56,6 +56,7 @@ function generateBook(isbn, callback) {
                 ebookPrice: json5.ebook_price,//ebook的价格
                 ebookUrl: json5.ebook_url,//ebook 的url
                 category: null,
+                source: 'douban'
             };
             callback(null, item);
         }
@@ -70,4 +71,8 @@ function fetchAndSave(isbn, callback) {
             callback(err);
         }
     });
+}
+
+module.exports = {
+    generateBook: generateBook
 }

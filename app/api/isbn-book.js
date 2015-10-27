@@ -3,6 +3,7 @@
  */
 
 var bookSearch = require("../service/book-search-service");
+var book_store_service = require('../service/book-store-service');
 
 function search(req, res, next) {
     var isbn = req.query.isbn;
@@ -23,6 +24,7 @@ function search(req, res, next) {
             if (data) {
                 res.json({code: 200, data: data});
             } else {
+                book_store_service.fetchAndStoreBook(isbn);
                 res.status(404).send({
                     message: 'the book not found'
                 });
