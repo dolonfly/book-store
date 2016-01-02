@@ -157,4 +157,4 @@ function requestBookInfo(params, callback) {
 
 module.exports = {
     generateBook: generateBook
-}
+};

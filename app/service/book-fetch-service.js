@@ -20,7 +20,6 @@ function generateBook(isbn, callback) {
     if (api_key) {
         api_param = "?apikey=" + api_key;
     }
-    console.log('https://api.douban.com/v2/book/isbn/' + isbn + api_param);
     var options = {
         url: 'https://api.douban.com/v2/book/isbn/' + isbn + api_param,
         encoding: null,
@@ -72,8 +71,5 @@ function generateBook(isbn, callback) {
 
 module.exports = {
     generateBook: generateBook
-}
+};
 
-generateBook("123", function (err, res) {
-    console.log(err)
-});
