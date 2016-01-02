@@ -3,7 +3,7 @@
  */
 
 function index(req, res, next) {
-    res.render('pages/index');
+    res.render('pages/book-information');
 }
 
 module.exports = {

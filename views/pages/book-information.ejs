@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ISBN search</title>
+    <% include ../partials/meta.ejs %>
+    <link rel="stylesheet" href="/bower_components/material-design-lite/material.min.css">
+    <link rel="stylesheet" href="//fonts.useso.com/icon?family=Material+Icons">
+</head>
+<body>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <% include ../partials/site-header.ejs %>
+    <main class="mdl-layout__content" style="text-align: center;">
+        <div class="mdl-grid" style="max-width: 1024px;margin: 0 auto;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col"
+                 id="features">
+
+                <% include ../partials/search-box.ejs %>
+
+                <% if(book) { %>
+                <div class="mdl-grid--no-spacing mdl-shadow--4dp">
+                    <div class="mdl-grid">
+                        <div class="mdl-cell  mdl-cell--3-col">
+                            <img src="http://img3.douban.com/lpic/s28349471.jpg" width="100%" border="0"
+                                 alt="" style="padding:0px;">
+                        </div>
+                        <div class="mdl-cell  mdl-cell--6-col" style="text-align: left">
+                            <h2> <%= book.title %></h2>
+
+                            <div class="book-meta">
+                                <span class="mdl-card__supporting-text">作者：</span> <%= book.author %>
+                                <br>
+                                <span class="mdl-card__supporting-text">出版社：</span> <%= book.publisher %>
+                                <br>
+                                <span class="mdl-card__supporting-text">译者：</span><%= book.translator %>
+                                <br>
+                                <span class="mdl-card__supporting-text">出版年：</span> <%= book.publishTime %>
+                                <br>
+                                <span class="mdl-card__supporting-text">页码：</span> <%= book.pages %>
+                                <br>
+                                <span class="mdl-card__supporting-text">定价：</span> <%= book.price %>
+                                <br>
+                                <span class="mdl-card__supporting-text">ISBN：</span> <%= book.isbn13 %>
+                                <br>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <span class="">简介：</span><span style="font-size: .85em;"> <%= book.summary %></span>
+                    <br>
+                </div>
+                <% }else{ %>
+                <div class="mdl-color--green-50" style="text-align: left;padding: 5px;">
+                    <p>
+                        It looks like you have tried to enter an ISBN, but it is not a valid ISBN. Please make sure you
+                        typed it correctly.
+                    </p>
+
+                    <p>
+                        A book's ISBN is usually found on the back cover, near the barcode. It will contain 10 or 13
+                        characters, plus any dashes and spaces.
+                    </p>
+
+                    <p>
+                        Valid examples: 978-0495011606, 9780136006176, 0077354761, 013603599X</p>
+
+                    <p>
+                        Alternatively, you can try searching for the book's title or author.
+                    </p></div>
+                <% } %>
+
+            </div>
+        </div>
+
+        <% include ../partials/site-footer.ejs %>
+    </main>
+</div>
+
+
+<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/bower_components/material-design-lite/material.min.js"></script>
+</body>
+</html>
