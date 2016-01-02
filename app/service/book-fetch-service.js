@@ -54,7 +54,7 @@ function generateBook(isbn, callback) {
                 series: json5.series,//丛书
                 rating: json5.rating,//评价
                 tags: json5.tags,//标签  [{"count":4801,"name":"青山七惠","title":"青山七惠"},{"count":2757,"name":"日本文学","title":"日本文学"},{"count":1849,"name":"日本","title":"日本"},{"count":1429,"name":"小说","title":"小说"},{"count":1048,"name":"温柔的叹息","title":"温柔的叹息"},{"count":343,"name":"外国文学","title":"外国文学"},{"count":240,"name":"文学","title":"文学"},{"count":174,"name":"日@青山七惠","title":"日@青山七惠"}]
-                image: json5.image,//图片url
+                image: json5.image.replace('mpic','lpic'),//图片url
                 catalog: json5.catalog,//目录
                 summary: json5.summary,//内容简介
                 doubanId: json5.id,//对应的豆瓣图书Id
