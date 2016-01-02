@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var homeController = require('../controller/home');
 
-//this place add routes
+router.get('/', homeController.index);
 
 module.exports = router;
