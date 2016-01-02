@@ -13,18 +13,16 @@
         <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone"
              id="features">
 
-            <form action="#">
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" type="text" id="sample3">
-                    <label class="mdl-textfield__label" for="sample3">ISBN...</label>
-                </div>
-            </form>
+            <% include ../partials/search-box.ejs %>
 
             <div class="mdl-card__supporting-text">
                 <h4>ISBN Search</h4>
+
                 <p>
-                    Using an ISBN is the most accurate and reliable way to search for a book. Use our search engine to find book information and the best prices for books.
+                    Using an ISBN is the most accurate and reliable way to search for a book. Use our search engine to
+                    find book information and the best prices for books.
                 </p>
+
                 <p>
                     最准确的找到一本图书是使用ISBN号码。本搜索引擎可以快速找到图书的详细信息。
                 </p>
@@ -34,16 +32,14 @@
                 <img src="http://www.isbnsearch.org/images/sample-isbn.png" alt="Sample ISBN"/>
 
                 <p>Typical location of an ISBN on the back of a book.</p>
+
                 <p>ISBN编号一般可以从图书的后封面找到。</p>
             </div>
 
 
         </div>
 
-        <footer class="mdl-mini-footer">
-            <p>Copyright &copy; 2015-2016 <a href="/">isbn.itfengzi.com</a> & <a href="http://www.dullong.com" target="_blank">www.dullong.com</a></p>
-
-        </footer>
+        <% include ../partials/site-footer.ejs %>
     </main>
 </div>
 
